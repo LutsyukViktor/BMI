@@ -1,0 +1,21 @@
+<p><input [(ngModel)]='age' type="number" name="age" placeholder="Сколько Вам полных лет"></p>
+
+<p><input [(ngModel)]='weight' type="number" name="weight" placeholder="Ваш вес в килограммах"></p>
+
+<p><input [(ngModel)]='height' type="number" name="height" placeholder="Ваш рост в сантиметрах"></p>
+
+<p><button (click)='bmi()'>
+     Расcчитать индекс массы тела
+</button></p>
+
+<p>
+    {{BMI}}
+</p>
+
+<button (click)='story()'>Cписок всех предыдущих введеных значений</button>
+
+   <div *ngIf="lastValue"> 
+        <p *ngFor="let data of history">
+                <a>Возраст:</a> {{data.age}} <a>Вес</a>: {{data.weight}} <a>Рост:</a> {{data.height}}
+        </p>
+   </div>
